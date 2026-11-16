@@ -1,0 +1,30 @@
+{
+ "schema": "news_queries.v3",
+ "note": "국가별 Google News RSS 쿼리. 기본 2개(한국어 KR:ko, 영어 US:en) + 우리금융 관련 1개(optional). 42개 법인의 모든 국가가 있어야 한다(validate.js 검사).",
+ "ttl_minutes": 30,
+ "per_country_keep": 20,
+ "keywords_alert": ["제재", "부도", "파산", "뱅크런", "디폴트", "구조조정", "영업정지", "강등", "sanction", "default", "bankruptcy", "bank run", "downgrade", "insolvency", "fraud"],
+ "countries": [
+  {"country_code":"CN","name_ko":"중국","queries":[{"q":"중국 은행 OR 금융","hl":"ko","gl":"KR","ceid":"KR:ko"},{"q":"China bank OR banking","hl":"en-US","gl":"US","ceid":"US:en"},{"q":"우리은행 중국","hl":"ko","gl":"KR","ceid":"KR:ko","optional":true}]},
+  {"country_code":"ID","name_ko":"인도네시아","queries":[{"q":"인도네시아 은행 OR 금융","hl":"ko","gl":"KR","ceid":"KR:ko"},{"q":"Indonesia bank OR banking","hl":"en-US","gl":"US","ceid":"US:en"},{"q":"우리소다라 OR 우리은행 인도네시아","hl":"ko","gl":"KR","ceid":"KR:ko","optional":true}]},
+  {"country_code":"KH","name_ko":"캄보디아","queries":[{"q":"캄보디아 은행 OR 금융","hl":"ko","gl":"KR","ceid":"KR:ko"},{"q":"Cambodia bank OR banking","hl":"en-US","gl":"US","ceid":"US:en"},{"q":"우리은행 캄보디아","hl":"ko","gl":"KR","ceid":"KR:ko","optional":true}]},
+  {"country_code":"VN","name_ko":"베트남","queries":[{"q":"베트남 은행 OR 금융","hl":"ko","gl":"KR","ceid":"KR:ko"},{"q":"Vietnam bank OR banking","hl":"en-US","gl":"US","ceid":"US:en"},{"q":"우리은행 베트남","hl":"ko","gl":"KR","ceid":"KR:ko","optional":true}]},
+  {"country_code":"RU","name_ko":"러시아","queries":[{"q":"러시아 은행 OR 금융","hl":"ko","gl":"KR","ceid":"KR:ko"},{"q":"Russia bank OR banking","hl":"en-US","gl":"US","ceid":"US:en"},{"q":"우리은행 러시아","hl":"ko","gl":"KR","ceid":"KR:ko","optional":true}]},
+  {"country_code":"BR","name_ko":"브라질","queries":[{"q":"브라질 은행 OR 금융","hl":"ko","gl":"KR","ceid":"KR:ko"},{"q":"Brazil bank OR banking","hl":"en-US","gl":"US","ceid":"US:en"},{"q":"우리은행 브라질","hl":"ko","gl":"KR","ceid":"KR:ko","optional":true}]},
+  {"country_code":"HK","name_ko":"홍콩","queries":[{"q":"홍콩 은행 OR 금융","hl":"ko","gl":"KR","ceid":"KR:ko"},{"q":"Hong Kong bank OR banking","hl":"en-US","gl":"US","ceid":"US:en"},{"q":"우리은행 홍콩","hl":"ko","gl":"KR","ceid":"KR:ko","optional":true}]},
+  {"country_code":"PH","name_ko":"필리핀","queries":[{"q":"필리핀 은행 OR 금융","hl":"ko","gl":"KR","ceid":"KR:ko"},{"q":"Philippines bank OR banking","hl":"en-US","gl":"US","ceid":"US:en"},{"q":"우리은행 필리핀","hl":"ko","gl":"KR","ceid":"KR:ko","optional":true}]},
+  {"country_code":"MM","name_ko":"미얀마","queries":[{"q":"미얀마 은행 OR 금융","hl":"ko","gl":"KR","ceid":"KR:ko"},{"q":"Myanmar bank OR banking","hl":"en-US","gl":"US","ceid":"US:en"},{"q":"우리은행 OR 우리카드 미얀마","hl":"ko","gl":"KR","ceid":"KR:ko","optional":true}]},
+  {"country_code":"DE","name_ko":"독일","queries":[{"q":"독일 은행 OR 금융","hl":"ko","gl":"KR","ceid":"KR:ko"},{"q":"Germany bank OR banking","hl":"en-US","gl":"US","ceid":"US:en"},{"q":"유럽우리은행 OR 우리은행 독일","hl":"ko","gl":"KR","ceid":"KR:ko","optional":true}]},
+  {"country_code":"US","name_ko":"미국","queries":[{"q":"미국 은행 OR 금융","hl":"ko","gl":"KR","ceid":"KR:ko"},{"q":"US bank OR banking regulator","hl":"en-US","gl":"US","ceid":"US:en"},{"q":"우리아메리카 OR 우리은행 미국","hl":"ko","gl":"KR","ceid":"KR:ko","optional":true}]},
+  {"country_code":"JP","name_ko":"일본","queries":[{"q":"일본 은행 OR 금융","hl":"ko","gl":"KR","ceid":"KR:ko"},{"q":"Japan bank OR banking","hl":"en-US","gl":"US","ceid":"US:en"},{"q":"우리은행 도쿄","hl":"ko","gl":"KR","ceid":"KR:ko","optional":true}]},
+  {"country_code":"SG","name_ko":"싱가포르","queries":[{"q":"싱가포르 은행 OR 금융","hl":"ko","gl":"KR","ceid":"KR:ko"},{"q":"Singapore bank OR banking","hl":"en-US","gl":"US","ceid":"US:en"},{"q":"우리은행 싱가포르","hl":"ko","gl":"KR","ceid":"KR:ko","optional":true}]},
+  {"country_code":"IN","name_ko":"인도","queries":[{"q":"인도 은행 OR 금융","hl":"ko","gl":"KR","ceid":"KR:ko"},{"q":"India bank OR banking","hl":"en-US","gl":"US","ceid":"US:en"},{"q":"우리은행 인도","hl":"ko","gl":"KR","ceid":"KR:ko","optional":true}]},
+  {"country_code":"BH","name_ko":"바레인","queries":[{"q":"바레인 은행 OR 금융","hl":"ko","gl":"KR","ceid":"KR:ko"},{"q":"Bahrain bank OR banking","hl":"en-US","gl":"US","ceid":"US:en"},{"q":"우리은행 바레인","hl":"ko","gl":"KR","ceid":"KR:ko","optional":true}]},
+  {"country_code":"BD","name_ko":"방글라데시","queries":[{"q":"방글라데시 은행 OR 금융","hl":"ko","gl":"KR","ceid":"KR:ko"},{"q":"Bangladesh bank OR banking","hl":"en-US","gl":"US","ceid":"US:en"},{"q":"우리은행 방글라데시","hl":"ko","gl":"KR","ceid":"KR:ko","optional":true}]},
+  {"country_code":"AE","name_ko":"UAE","queries":[{"q":"아랍에미리트 OR 두바이 은행 OR 금융","hl":"ko","gl":"KR","ceid":"KR:ko"},{"q":"UAE bank OR banking","hl":"en-US","gl":"US","ceid":"US:en"},{"q":"우리은행 두바이","hl":"ko","gl":"KR","ceid":"KR:ko","optional":true}]},
+  {"country_code":"AU","name_ko":"호주","queries":[{"q":"호주 은행 OR 금융","hl":"ko","gl":"KR","ceid":"KR:ko"},{"q":"Australia bank OR banking","hl":"en-US","gl":"US","ceid":"US:en"},{"q":"우리은행 시드니","hl":"ko","gl":"KR","ceid":"KR:ko","optional":true}]},
+  {"country_code":"PL","name_ko":"폴란드","queries":[{"q":"폴란드 은행 OR 금융","hl":"ko","gl":"KR","ceid":"KR:ko"},{"q":"Poland bank OR banking","hl":"en-US","gl":"US","ceid":"US:en"},{"q":"우리은행 폴란드","hl":"ko","gl":"KR","ceid":"KR:ko","optional":true}]},
+  {"country_code":"MY","name_ko":"말레이시아","queries":[{"q":"말레이시아 은행 OR 금융","hl":"ko","gl":"KR","ceid":"KR:ko"},{"q":"Malaysia bank OR banking","hl":"en-US","gl":"US","ceid":"US:en"},{"q":"우리은행 말레이시아","hl":"ko","gl":"KR","ceid":"KR:ko","optional":true}]},
+  {"country_code":"HU","name_ko":"헝가리","queries":[{"q":"헝가리 은행 OR 금융","hl":"ko","gl":"KR","ceid":"KR:ko"},{"q":"Hungary bank OR banking","hl":"en-US","gl":"US","ceid":"US:en"},{"q":"우리은행 헝가리","hl":"ko","gl":"KR","ceid":"KR:ko","optional":true}]}
+ ]
+}
