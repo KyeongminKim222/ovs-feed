@@ -3,6 +3,7 @@ on:
   schedule:
     - cron: "0 21 * * *"   # 매일 06:00 KST
     - cron: "0 3 * * *"    # 매일 12:00 KST
+    - cron: "17 9 * * *"   # 매일 18:17 KST (예약 실행 누락 대비 보조)
   workflow_dispatch:
 permissions:
   contents: write
@@ -12,19 +13,28 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
       - name: Fetch news
         run: node update.js
+      - name: OECD country risk (PDF → crc.json)
+        run: |
+          pip install --quiet pypdf
+          python crc.py
+      - name: Country risk · macro · auto disclosures
+        run: node update_risk.js
       - name: Commit
         run: |
           git config user.name "feed-bot"
           git config user.email "feed-bot@users.noreply.github.com"
-          git add feed.json
+          git add feed.json crc.json
           git diff --cached --quiet && echo "no change" && exit 0
           git commit -m "feed: $(date -u +%Y-%m-%dT%H:%MZ)"
           git push
